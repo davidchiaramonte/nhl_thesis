@@ -29,6 +29,7 @@ view: player_info {
   dimension: last_name {
     type: string
     sql: ${TABLE}.lastName ;;
+    drill_fields: [last_name]
   }
 
   dimension: link {
