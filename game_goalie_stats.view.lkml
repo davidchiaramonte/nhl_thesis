@@ -97,6 +97,11 @@ view: game_goalie_stats {
     sql: ${TABLE}.timeOnIce ;;
   }
 
+  measure: average_save_percentage {
+    type: average
+    sql: ${save_percentage} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [game.game_id]

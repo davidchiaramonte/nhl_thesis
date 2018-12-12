@@ -102,6 +102,11 @@ view: game {
     sql: ${away_goals} ;;
   }
 
+  measure: number_of_games_played {
+    type: count_distinct
+    sql: ${game_id} ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [

@@ -18,6 +18,16 @@ explore: game_goalie_stats {
     sql_on: ${game_goalie_stats.game_id} = ${game.game_id} ;;
     relationship: many_to_one
   }
+  join: player_info {
+    type: left_outer
+    sql_on: ${game_goalie_stats.player_id} = ${player_info.player_id} ;;
+    relationship: many_to_one
+  }
+  join: team_info {
+    type: left_outer
+    sql_on: ${game_goalie_stats.team_id} = ${team_info.team_id} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: game_plays {
@@ -53,7 +63,7 @@ explore: game_skater_stats {
   join: player_info {
     type: left_outer
     sql_on: ${player_info.player_id} = ${game_skater_stats.player_id} ;;
-    relationship: one_to_one
+    relationship: many_to_one
   }
   join: team_info {
     type: left_outer
@@ -66,6 +76,11 @@ explore: game_teams_stats {
   join: game {
     type: left_outer
     sql_on: ${game_teams_stats.game_id} = ${game.game_id} ;;
+    relationship: many_to_one
+  }
+  join: team_info {
+    type: left_outer
+    sql_on: ${game_teams_stats.team_id} = ${team_info.team_id} ;;
     relationship: many_to_one
   }
 }
