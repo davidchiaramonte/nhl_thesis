@@ -112,6 +112,11 @@ view: game_skater_stats {
     sql: ${TABLE}.timeOnIce ;;
   }
 
+  measure: total_goals {
+    type: sum
+    sql: ${goals} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [game.game_id]

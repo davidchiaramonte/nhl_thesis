@@ -50,6 +50,16 @@ explore: game_skater_stats {
     sql_on: ${game_skater_stats.game_id} = ${game.game_id} ;;
     relationship: many_to_one
   }
+  join: player_info {
+    type: left_outer
+    sql_on: ${player_info.player_id} = ${game_skater_stats.player_id} ;;
+    relationship: one_to_one
+  }
+  join: team_info {
+    type: left_outer
+    sql_on: ${team_info.team_id} = ${game_skater_stats.team_id} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: game_teams_stats {
@@ -63,3 +73,5 @@ explore: game_teams_stats {
 explore: player_info {}
 
 explore: team_info {}
+
+### END OF AUTO-GENERATED EXPLORES ###

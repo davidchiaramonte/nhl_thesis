@@ -92,6 +92,16 @@ view: game {
     drill_fields: [detail*]
   }
 
+  measure: total_home_goals {
+    type: sum
+    sql: ${home_goals} ;;
+  }
+
+  measure: total_away_goals {
+    type: sum
+    sql: ${away_goals} ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
