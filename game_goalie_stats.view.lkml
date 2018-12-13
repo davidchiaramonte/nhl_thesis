@@ -1,6 +1,12 @@
 view: game_goalie_stats {
   sql_table_name: NHL.game_goalie_stats ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    sql: CONCAT(${player_id}, ${game_id}) ;;
+  }
+
   dimension: assists {
     type: number
     sql: ${TABLE}.assists ;;
@@ -112,8 +118,8 @@ view: game_goalie_stats {
     }
   }
 
-  measure: count {
+  measure: total_games_played {
     type: count
-    drill_fields: [game.game_id]
+    drill_fields: [game.game_id, decision]
   }
 }
