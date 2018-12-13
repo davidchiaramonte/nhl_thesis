@@ -117,6 +117,26 @@ view: game_skater_stats {
     sql: ${goals} ;;
   }
 
+  measure: total_assists {
+    type: sum
+    sql: ${assists} ;;
+  }
+
+  measure: total_power_play_goals {
+    type: sum
+    sql: ${power_play_goals} ;;
+  }
+
+  measure: total_power_play_assists {
+    type: sum
+    sql: ${power_play_assists} ;;
+  }
+
+  measure: total_fantasy_points {
+    type: number
+    sql: (3*${game_skater_stats.total_goals}) + (2*${game_skater_stats.total_assists}) + (${game_skater_stats.total_power_play_goals} + ${game_skater_stats.total_power_play_assists}) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [game.game_id]

@@ -100,6 +100,16 @@ view: game_goalie_stats {
   measure: average_save_percentage {
     type: average
     sql: ${save_percentage} ;;
+    value_format: "00.00\%"
+  }
+
+  measure: total_wins {
+    type: count
+
+    filters: {
+      field:  decision
+      value: "W"
+    }
   }
 
   measure: count {
