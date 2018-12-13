@@ -1,6 +1,13 @@
 view: game_shifts {
   sql_table_name: NHL.game_shifts ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    type: string
+    sql: CONCAT(${game_id}, ${player_id}) ;;
+  }
+
   dimension: game_id {
     type: number
     # hidden: yes

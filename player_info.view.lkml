@@ -43,6 +43,7 @@ view: player_info {
   }
 
   dimension: player_id {
+    primary_key: yes
     type: number
     sql: ${TABLE}.player_id ;;
   }

@@ -1,6 +1,13 @@
 view: game_skater_stats {
   sql_table_name: NHL.game_skater_stats ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    type: string
+    sql: CONCAT(${game_id}, ${player_id}) ;;
+  }
+
   dimension: assists {
     type: number
     sql: ${TABLE}.assists ;;

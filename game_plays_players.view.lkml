@@ -1,6 +1,13 @@
 view: game_plays_players {
   sql_table_name: NHL.game_plays_players ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    type: string
+    sql: CONCAT(${play_id}, ${player_id}) ;;
+  }
+
   dimension: game_id {
     type: number
     # hidden: yes

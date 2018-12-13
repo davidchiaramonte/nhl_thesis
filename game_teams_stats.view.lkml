@@ -1,6 +1,13 @@
 view: game_teams_stats {
   sql_table_name: NHL.game_teams_stats ;;
 
+  dimension: primary_key {
+    primary_key: yes
+    hidden: yes
+    type: string
+    sql: CONCAT(${game_id}, ${team_id}) ;;
+  }
+
   dimension: face_off_win_percentage {
     type: number
     sql: ${TABLE}.faceOffWinPercentage ;;

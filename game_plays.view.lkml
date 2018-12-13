@@ -62,6 +62,7 @@ view: game_plays {
   }
 
   dimension: play_id {
+    primary_key: yes
     type: string
     sql: ${TABLE}.play_id ;;
   }

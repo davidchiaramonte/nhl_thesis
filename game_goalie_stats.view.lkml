@@ -4,6 +4,7 @@ view: game_goalie_stats {
   dimension: primary_key {
     primary_key: yes
     hidden: yes
+    type: string
     sql: CONCAT(${player_id}, ${game_id}) ;;
   }
 
