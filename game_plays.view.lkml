@@ -116,4 +116,9 @@ view: game_plays {
     type: count
     drill_fields: [game.game_id]
   }
+
+  measure: penalty_count {
+    type: count
+    drill_fields: [game.game_id, date_time, description]
+  }
 }
