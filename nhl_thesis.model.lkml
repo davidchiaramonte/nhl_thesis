@@ -36,6 +36,16 @@ explore: game_plays {
     sql_on: ${game_plays.game_id} = ${game.game_id} ;;
     relationship: many_to_one
   }
+  join: game_plays_players {
+    type: left_outer
+    sql_on: ${game_plays.play_id} = ${game_plays_players.play_id} ;;
+    relationship: many_to_one
+  }
+  join: player_info {
+    type: left_outer
+    sql_on: ${game_plays_players.player_id} = ${player_info.player_id} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: game_plays_players {
