@@ -100,3 +100,5 @@ explore: player_info {}
 explore: team_info {}
 
 ### END OF AUTO-GENERATED EXPLORES ###
+
+explore: starting_lineup {}
