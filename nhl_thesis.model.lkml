@@ -102,3 +102,5 @@ explore: team_info {}
 ### END OF AUTO-GENERATED EXPLORES ###
 
 explore: starting_lineup {}
+
+explore: penalty_instigators {}
