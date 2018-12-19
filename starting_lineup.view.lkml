@@ -1,5 +1,6 @@
 view: starting_lineup {
   derived_table: {
+    persist_for: "8760 hours"
     sql:
       (SELECT
   team_info.shortName  AS City_Name,

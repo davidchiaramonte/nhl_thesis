@@ -144,6 +144,11 @@ view: game_skater_stats {
     sql: (3*${game_skater_stats.total_goals}) + (2*${game_skater_stats.total_assists}) + (${game_skater_stats.total_power_play_goals} + ${game_skater_stats.total_power_play_assists}) ;;
   }
 
+  measure: total_penalty_minutes {
+    type: sum
+    sql: ${penalty_minutes} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [game.game_id]

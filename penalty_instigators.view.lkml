@@ -1,5 +1,6 @@
 view: penalty_instigators {
   derived_table: {
+    persist_for: "8760 hours"
     sql: SELECT
   player_info.firstName  AS player_info_first_name,
   player_info.lastName  AS player_info_last_name,

@@ -104,3 +104,30 @@ explore: team_info {}
 explore: starting_lineup {}
 
 explore: penalty_instigators {}
+
+explore: top_hitters {}
+
+explore: blocked_shots {}
+
+explore: giveaways {}
+
+explore: missed_shots {}
+#
+# explore: goalie_shots_blocked {
+#   from: game_plays
+#   join: game {
+#     type: left_outer
+#     sql_on: ${goalie_shots_blocked.game_id} = ${game.game_id} ;;
+#     relationship: many_to_one
+#   }
+#   join: game_goalie_stats {
+#     type: left_outer
+#     sql_on: ${game.game_id} = ${game_goalie_stats.game_id} ;;
+#     relationship: many_to_one
+#   }
+#   join: player_info {
+#     type: left_outer
+#     sql_on: ${game_goalie_stats.team_id} = ${player_info.player_id} ;;
+#     relationship: many_to_one
+#   }
+# }
