@@ -112,6 +112,46 @@ explore: blocked_shots {}
 explore: giveaways {}
 
 explore: missed_shots {}
+
+explore: player_comparison {}
+
+# explore: total_info {
+#   from: game_plays
+#   join: game {
+#     type: left_outer
+#     sql_on: ${total_info.game_id} = ${game.game_id} ;;
+#     relationship: many_to_one
+#   }
+#     join: game_teams_stats {
+#       type: left_outer
+#       sql_on: ${game_teams_stats.game_id} = ${game.game_id} ;;
+#       relationship: many_to_one
+#     }
+#   join: game_plays_players {
+#       type: left_outer
+#       sql_on: ${game_plays_players.play_id} = ${total_info.play_id} ;;
+#       relationship: many_to_one
+#   }
+#   join: game_goalie_stats {
+#       type: left_outer
+#       sql_on: ${game.game_id} = ${game_goalie_stats.game_id} ;;
+#       relationship: many_to_one
+#   }
+#   join: game_shifts {
+#       type: left_outer
+#       sql_on: ${game_shifts.game_id} = ${game.game_id} ;;
+#       relationship: many_to_one
+#   }
+#   join: game_skater_stats {
+#       type: left_outer
+#       sql_on: ${game.game_id} = ${game_skater_stats.game_id} ;;
+#       relationship: many_to_one
+#   }
+#   join: player_info {
+#       type: left_outer
+#       sql_on:  ;;
+#   }
+# }
 #
 # explore: goalie_shots_blocked {
 #   from: game_plays
