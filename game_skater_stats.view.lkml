@@ -149,6 +149,66 @@ view: game_skater_stats {
     sql: ${penalty_minutes} ;;
   }
 
+  measure: average_penalty_minutes {
+    type: average
+    sql: ${penalty_minutes} ;;
+    value_format: "0.00"
+  }
+
+  measure: average_shots_on_goal {
+    type: average
+    sql: ${shots} ;;
+    value_format: "0.00"
+  }
+
+  measure: average_goals {
+    type: average
+    sql: ${goals} ;;
+    value_format: "0.00"
+  }
+
+  measure: average_assists {
+    type: average
+    sql: ${assists} ;;
+    value_format: "0.00"
+  }
+
+  measure: average_power_play_goals {
+    type: average
+    sql: ${power_play_goals} ;;
+    value_format: "0.00"
+  }
+
+  measure: average_power_play_assists {
+    type: average
+    sql: ${power_play_assists} ;;
+    value_format: "0.00"
+  }
+
+  measure: average_fantasy_points {
+    type: number
+    sql: (3*${average_goals}) + (2*${average_assists}) + ${average_power_play_goals} + ${average_power_play_goals} ;;
+    value_format: "0.00"
+  }
+
+  measure: average_time_on_ice {
+    type: average
+    sql: ${time_on_ice}/60 ;;
+    value_format: "0.00"
+  }
+
+  measure: games_played {
+    type: count_distinct
+    sql: ${game_id} ;;
+    drill_fields: [game_id]
+  }
+
+  measure: average_plus_minus {
+    type: average
+    sql: ${plus_minus} ;;
+    value_format: "0.0000"
+  }
+
   measure: count {
     type: count
     drill_fields: [game.game_id]
