@@ -209,6 +209,20 @@ view: game_skater_stats {
     value_format: "0.0000"
   }
 
+  measure: total_team_plus_minus {
+    type: sum
+    sql: ${plus_minus} ;;
+    value_format: "0.0000"
+    description: "To be used with Game Count to calculate team plus minus"
+  }
+
+  measure: total_team_shots_on_goal {
+    type: sum
+    sql: ${shots} ;;
+    value_format: "0.00"
+    description: "To be used with Game Count to calculate team shots on goal"
+  }
+
   measure: count {
     type: count
     drill_fields: [game.game_id]
