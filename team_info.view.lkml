@@ -24,6 +24,11 @@ view: team_info {
   dimension: short_name {
     type: string
     sql: ${TABLE}.shortName ;;
+    link: {
+      label: "Stadium Information"
+      url: "https://www.google.com/search?q={{ value | url_encode }} NHL Stadium"
+      icon_url: "http://google.com/favicon.ico"
+    }
   }
 
   dimension: full_team_name {
@@ -37,6 +42,16 @@ view: team_info {
       label: "Team News"
       url: "https://www.nhl.com/search#q={{ value | url_encode }}"
       icon_url: "http://pluspng.com/img-png/nhl-png-datei-logo-nhl-svg-2000.png"
+    }
+    link: {
+      label: "Team Breakdown"
+      url: "/dashboards/7?Team+Name={{ value | url_encode }}"
+      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
+      }
+    link: {
+      label: "Team Comparison"
+      url: "/dashboards/5?Team+1={{ value | url_encode }}"
+      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
     }
   }
 
