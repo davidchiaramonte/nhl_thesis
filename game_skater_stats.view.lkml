@@ -153,48 +153,87 @@ view: game_skater_stats {
     type: average
     sql: ${penalty_minutes} ;;
     value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
   }
 
   measure: average_shots_on_goal {
     type: average
     sql: ${shots} ;;
     value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
   }
 
   measure: average_goals {
     type: average
     sql: ${goals} ;;
     value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
   }
 
   measure: average_assists {
     type: average
     sql: ${assists} ;;
     value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
   }
 
   measure: average_power_play_goals {
     type: average
     sql: ${power_play_goals} ;;
     value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
   }
 
   measure: average_power_play_assists {
     type: average
     sql: ${power_play_assists} ;;
     value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
   }
 
   measure: average_fantasy_points {
     type: number
     sql: (3*${average_goals}) + (2*${average_assists}) + ${average_power_play_goals} + ${average_power_play_goals} ;;
     value_format: "0.00"
+    link: {
+      label: "How Fantasy Scoring Works"
+      url: "https://www.dummies.com/sports/fantasy-sports/fantasy-hockey/how-does-fantasy-hockey-scoring-work/"
+    }
   }
 
   measure: average_time_on_ice {
     type: average
     sql: ${time_on_ice}/60 ;;
     value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
   }
 
   measure: games_played {
@@ -207,6 +246,11 @@ view: game_skater_stats {
     type: average
     sql: ${plus_minus} ;;
     value_format: "0.0000"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
   }
 
   measure: total_team_plus_minus {

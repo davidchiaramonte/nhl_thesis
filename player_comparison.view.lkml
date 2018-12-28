@@ -33,9 +33,23 @@ ORDER BY 10 DESC ;;
     sql: ${TABLE}.team_info_team_name ;;
   }
 
+  dimension: full_team_name {
+    type: string
+    sql: CASE
+    WHEN ${team_city} = "NY Islanders" THEN "New York Islanders"
+    WHEN ${team_city} = "NY Rangers" THEN "New York Rangers"
+    ELSE concat(${team_city}," ",${team_name})
+    END;;
+  }
+
   dimension: first_name {
     type: string
     sql: ${TABLE}.player_info_first_name ;;
+  }
+
+  dimension: full_name {
+    type: string
+    sql: concat(${first_name}," ",${last_name}) ;;
   }
 
   dimension: last_name {

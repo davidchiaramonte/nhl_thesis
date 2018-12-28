@@ -21,6 +21,16 @@ LIMIT 500 ;;
     sql: ${TABLE}.player_info_first_name ;;
   }
 
+  dimension: full_name {
+    type: string
+    sql: concat(${first_name}," ",${last_name}) ;;
+    link: {
+      label: "Player News"
+      url: "https://www.nhl.com/search#q={{ value | url_encode }}"
+      icon_url: "http://pluspng.com/img-png/nhl-png-datei-logo-nhl-svg-2000.png"
+    }
+  }
+
   dimension: last_name {
     type: string
     sql: ${TABLE}.player_info_last_name ;;

@@ -52,6 +52,11 @@ LIMIT 6);;
     sql: ${TABLE}.City_Name ;;
   }
 
+  dimension: full_team_name {
+    type: string
+    sql: concat(${city_name}," ",${team_name}) ;;
+  }
+
   dimension: team_name {
     type: string
     sql: ${TABLE}.Team_Name ;;
@@ -60,6 +65,11 @@ LIMIT 6);;
   dimension: first_name {
     type: string
     sql: ${TABLE}.First_Name ;;
+  }
+
+  dimension: full_name {
+    type: string
+    sql: concat(${first_name}," ",${last_name}) ;;
   }
 
   dimension: last_name {
