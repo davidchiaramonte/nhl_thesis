@@ -26,8 +26,13 @@ view: team_info {
     sql: ${TABLE}.shortName ;;
     link: {
       label: "Stadium Information"
-      url: "https://www.google.com/search?q={{ value | url_encode }} NHL Stadium"
+      url: "https://www.google.com/search?q={{ value | url_encode }} NHL Stadium information"
       icon_url: "http://google.com/favicon.ico"
+    }
+    link: {
+      label: "Stadium Location"
+      url: "https://www.google.com/maps?q={{ value | url_encode }} NHL stadium"
+      icon_url: "https://img.icons8.com/color/1600/google-maps.png"
     }
   }
 
