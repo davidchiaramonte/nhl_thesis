@@ -55,6 +55,21 @@ LIMIT 6);;
   dimension: full_team_name {
     type: string
     sql: concat(${city_name}," ",${team_name}) ;;
+    link: {
+      label: "Team News"
+      url: "https://www.nhl.com/search#q={{ value | url_encode }}"
+      icon_url: "http://pluspng.com/img-png/nhl-png-datei-logo-nhl-svg-2000.png"
+    }
+    link: {
+      label: "Team Breakdown"
+      url: "/dashboards/7?Team+Name={{ value | url_encode }}"
+      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
+    }
+    link: {
+      label: "Team Comparison"
+      url: "/dashboards/5?Team+1={{ value | url_encode }}"
+      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
+    }
   }
 
   dimension: team_name {
@@ -70,6 +85,21 @@ LIMIT 6);;
   dimension: full_name {
     type: string
     sql: concat(${first_name}," ",${last_name}) ;;
+    link: {
+      label: "Player News"
+      url: "https://www.nhl.com/search#q={{ value | url_encode }}"
+      icon_url: "http://pluspng.com/img-png/nhl-png-datei-logo-nhl-svg-2000.png"
+    }
+    link: {
+      label: "Player Breakdown"
+      url: "/dashboards/6?Player+Name={{ value | url_encode }}"
+      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
+    }
+    link: {
+      label: "Player Comparison"
+      url: "/dashboards/3?Player+1={{ value | url_encode }}"
+      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
+    }
   }
 
   dimension: last_name {

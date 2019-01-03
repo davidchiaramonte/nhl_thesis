@@ -67,6 +67,13 @@ view: game_skater_stats {
   dimension: plus_minus {
     type: number
     sql: ${TABLE}.plusMinus ;;
+    html: {% if value > 0 %}
+            <p style="color: lime">{{ rendered_value }}</p>
+          {% elsif value < 0 %}
+            <p style="color: red">{{ rendered_value }}</p>
+          {% else %}
+            <p style="color: black">{{ rendered_value }}</p>
+          {% endif %} ;;
   }
 
   dimension: power_play_assists {
@@ -245,6 +252,13 @@ view: game_skater_stats {
   measure: average_plus_minus {
     type: average
     sql: ${plus_minus} ;;
+    html: {% if value > 0 %}
+    <p style="color: lime">{{ rendered_value }}</p>
+    {% elsif value < 0 %}
+    <p style="color: red">{{ rendered_value }}</p>
+    {% else %}
+    <p style="color: black">{{ rendered_value }}</p>
+    {% endif %} ;;
     value_format: "0.0000"
     link: {
       label: "Hockey Term Definitions"
