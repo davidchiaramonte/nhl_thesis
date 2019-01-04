@@ -69,8 +69,8 @@ view: player_info {
   }
 
   dimension: player_portrait {
-    sql:  CONCAT("https://www.googleapis.com/customsearch/v1?q=",${full_name}," NHL portrait","&cx=018043677105343392876:la2bmnqp4yq&searchType=image&key=AIzaSyA9Dhc9gHV8NqcQdPSrsRz5oM9opisn3-4&num=1&fields=items%2Flink") ;;
-    html: <img src='{{ value }}'> ;;
+    sql:  CONCAT(${first_name}," ",${last_name}," current NHL headshot portrait") ;;
+    html: <img src="http://looker-feeling-lucky.herokuapp.com/api.php?q={{ value | url_param_escape }}" height="100%" width="100%" /> ;;
   }
 
   dimension: primary_position {

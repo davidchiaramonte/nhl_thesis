@@ -274,6 +274,19 @@ view: game_skater_stats {
     description: "To be used with Game Count to calculate team plus minus"
   }
 
+  measure: average_team_plus_minus {
+    type: number
+    sql: 1.0* ${total_team_plus_minus}/${game.count} ;;
+    value_format: "0.0000"
+    html: {% if value > 0 %}
+    <p style="color: lime">{{ rendered_value }}</p>
+    {% elsif value < 0 %}
+    <p style="color: red">{{ rendered_value }}</p>
+    {% else %}
+    <p style="color: black">{{ rendered_value }}</p>
+    {% endif %} ;;
+  }
+
   measure: total_team_shots_on_goal {
     type: sum
     sql: ${shots} ;;
