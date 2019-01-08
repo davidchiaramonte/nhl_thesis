@@ -70,6 +70,11 @@ LIMIT 6);;
       url: "/dashboards/5?Team+1={{ value | url_encode }}"
       icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
     }
+    link: {
+      label: "NHL and Team Statistics"
+      url: "/dashboards/4"
+      icon_url: "https://www.looker.com/favicon.ico"
+    }
   }
 
   dimension: team_name {
@@ -93,12 +98,12 @@ LIMIT 6);;
     link: {
       label: "Player Breakdown"
       url: "/dashboards/6?Player+Name={{ value | url_encode }}"
-      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
+      icon_url: "https://www.looker.com/favicon.ico"
     }
     link: {
       label: "Player Comparison"
       url: "/dashboards/3?Player+1={{ value | url_encode }}"
-      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
+      icon_url: "https://www.looker.com/favicon.ico"
     }
   }
 

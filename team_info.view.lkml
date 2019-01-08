@@ -51,12 +51,17 @@ view: team_info {
     link: {
       label: "Team Breakdown"
       url: "/dashboards/7?Team+Name={{ value | url_encode }}"
-      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
+      icon_url: "https://www.looker.com/favicon.ico"
       }
     link: {
       label: "Team Comparison"
       url: "/dashboards/5?Team+1={{ value | url_encode }}"
-      icon_url: "https://static.crozdesk.com/web_app_library/providers/logos/000/002/613/original/looker-data-platform-1506361407-logo.png?1506361407"
+      icon_url: "https://www.looker.com/favicon.ico"
+    }
+    link: {
+      label: "NHL and Team Statistics"
+      url: "/dashboards/4"
+      icon_url: "https://www.looker.com/favicon.ico"
     }
   }
 
