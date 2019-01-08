@@ -13,7 +13,7 @@ view: team_info {
 
   dimension: logo {
     sql:  CONCAT(${full_team_name}," NHL current logo") ;;
-    html: <img src="http://looker-feeling-lucky.herokuapp.com/api.php?q={{ value | url_param_escape }}" height="100%" width="100%" /> ;;
+    html: <img src="http://looker-feeling-lucky.herokuapp.com/api.php?q={{ value | url_param_escape }}" height="75%" width="75%" /> ;;
   }
 
   dimension: link {
