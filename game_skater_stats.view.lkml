@@ -1,6 +1,26 @@
 view: game_skater_stats {
   sql_table_name: NHL.game_skater_stats ;;
 
+  parameter: pie_chart_parameter {
+    type: unquoted
+    description: "To be used with the Pie Chart Value field"
+    allowed_value: { label: "Total Fantasy Points" value: "FP" }
+    allowed_value: { label: "Total Goals" value: "G" }
+    allowed_value: { label: "Total Assists" value: "A" }
+  }
+
+  measure: pie_chart_value {
+    type: number
+    description: "To be used with the Pie Chart Parameter field"
+    sql: {% if pie_chart_parameter._parameter_value == "FP" %}
+          ${total_fantasy_points}
+         {% elsif pie_chart_parameter._parameter_value == "G" %}
+          ${total_goals}
+         {% else %}
+          ${total_assists}
+         {% endif %};;
+  }
+
   dimension: primary_key {
     primary_key: yes
     hidden: yes
