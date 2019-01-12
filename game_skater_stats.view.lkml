@@ -272,19 +272,19 @@ view: game_skater_stats {
   measure: average_plus_minus {
     type: average
     sql: ${plus_minus} ;;
-    html: {% if value > 0 %}
-    <p style="color: lime">{{ rendered_value }}</p>
-    {% elsif value < 0 %}
-    <p style="color: red">{{ rendered_value }}</p>
-    {% else %}
-    <p style="color: black">{{ rendered_value }}</p>
-    {% endif %} ;;
-    value_format: "0.0000"
     link: {
       label: "Hockey Term Definitions"
       url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
       icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
     }
+    html: {% if value > 0 %}
+    <p style="color: lime">{{ linked_value }}</p>
+    {% elsif value < 0 %}
+    <p style="color: red">{{ linked_value }}</p>
+    {% else %}
+    <p style="color: black">{{ linked_value }}</p>
+    {% endif %} ;;
+    value_format: "0.0000"
   }
 
   measure: total_team_plus_minus {
@@ -298,6 +298,11 @@ view: game_skater_stats {
     type: number
     sql: 1.0* ${total_team_plus_minus}/${game.count} ;;
     value_format: "0.0000"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
     html: {% if value > 0 %}
     <p style="color: lime">{{ rendered_value }}</p>
     {% elsif value < 0 %}
@@ -305,6 +310,83 @@ view: game_skater_stats {
     {% else %}
     <p style="color: black">{{ rendered_value }}</p>
     {% endif %} ;;
+  }
+
+  measure: average_team_goals {
+    type: number
+    sql: ${total_goals}/${game.count} ;;
+    value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
+  }
+
+  measure: average_team_assists {
+    type: number
+    sql: ${total_assists}/${game.count} ;;
+    value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
+  }
+
+  measure: average_team_power_play_goals {
+    type: number
+    sql: ${total_power_play_goals}/${game.count} ;;
+    value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
+  }
+
+  measure: average_team_power_play_assists {
+    type: number
+    sql: ${total_power_play_assists}/${game.count} ;;
+    value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
+  }
+
+  measure: average_team_penalty_minutes {
+    type: number
+    sql: ${total_penalty_minutes}/${game.count} ;;
+    value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
+  }
+
+  measure: average_team_fantasy_points {
+    type: number
+    sql: ${total_fantasy_points}/${game.count} ;;
+    value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
+  }
+
+  measure: average_team_shots_on_goal {
+    type: number
+    sql: ${total_team_shots_on_goal}/${game.count} ;;
+    value_format: "0.00"
+    link: {
+      label: "Hockey Term Definitions"
+      url: "https://en.wikipedia.org/wiki/Glossary_of_ice_hockey_terms"
+      icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
+    }
   }
 
   measure: total_team_shots_on_goal {
