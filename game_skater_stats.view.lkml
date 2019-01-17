@@ -278,11 +278,11 @@ view: game_skater_stats {
       icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
     }
     html: {% if value > 0 %}
-    <p style="color: lime">{{ linked_value }}</p>
+    <p style="color: lime">{{ rendered_value }}</p>
     {% elsif value < 0 %}
-    <p style="color: red">{{ linked_value }}</p>
+    <p style="color: red">{{ rendered_value }}</p>
     {% else %}
-    <p style="color: black">{{ linked_value }}</p>
+    <p style="color: black">{{ rendered_value }}</p>
     {% endif %} ;;
     value_format: "0.0000"
   }
@@ -304,11 +304,11 @@ view: game_skater_stats {
       icon_url: "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1122px-Wikipedia-logo-v2.svg.png"
     }
     html: {% if value > 0 %}
-    <p style="color: lime">{{ rendered_value }}</p>
+    <font color="lime">{{ rendered_value }}</font>
     {% elsif value < 0 %}
-    <p style="color: red">{{ rendered_value }}</p>
+    <font color="red">{{ rendered_value }}</font>
     {% else %}
-    <p style="color: black">{{ rendered_value }}</p>
+    <font color="black">{{ rendered_value }}</font>
     {% endif %} ;;
   }
 
