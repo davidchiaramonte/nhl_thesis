@@ -7,7 +7,27 @@ view: game_skater_stats {
     allowed_value: { label: "Total Fantasy Points" value: "FP" }
     allowed_value: { label: "Total Goals" value: "G" }
     allowed_value: { label: "Total Assists" value: "A" }
+    allowed_value: { label: "None" value: "None"}
   }
+
+  parameter: pie_chart_parameter2 {
+    type: unquoted
+    description: "To be used with the Pie Chart Value field"
+    allowed_value: { label: "Total Fantasy Points" value: "FP" }
+    allowed_value: { label: "Total Goals" value: "G" }
+    allowed_value: { label: "Total Assists" value: "A" }
+    allowed_value: { label: "None" value: "None" }
+  }
+
+  parameter: pie_chart_parameter3 {
+    type: unquoted
+    description: "To be used with the Pie Chart Value field"
+    allowed_value: { label: "Total Fantasy Points" value: "FP" }
+    allowed_value: { label: "Total Goals" value: "G" }
+    allowed_value: { label: "Total Assists" value: "A" }
+    allowed_value: { label: "None" value: "None" }
+  }
+
 
   measure: pie_chart_value {
     type: number
@@ -16,8 +36,38 @@ view: game_skater_stats {
           ${total_fantasy_points}
          {% elsif pie_chart_parameter._parameter_value == "G" %}
           ${total_goals}
-         {% else %}
+         {% elsif pie_chart_parameter._parameter_value == "A" %}
           ${total_assists}
+         {% else %}
+          NULL
+         {% endif %};;
+  }
+
+  measure: pie_chart_value2 {
+    type: number
+    description: "To be used with the Pie Chart Parameter2 field"
+    sql: {% if pie_chart_parameter2._parameter_value == "FP" %}
+          ${total_fantasy_points}
+         {% elsif pie_chart_parameter2._parameter_value == "G" %}
+          ${total_goals}
+         {% elsif pie_chart_parameter._parameter_value == "A" %}
+          ${total_assists}
+         {% else %}
+          NULL
+         {% endif %};;
+  }
+
+  measure: pie_chart_value3 {
+    type: number
+    description: "To be used with the Pie Chart Parameter field"
+    sql: {% if pie_chart_parameter3._parameter_value == "FP" %}
+          ${total_fantasy_points}
+         {% elsif pie_chart_parameter3._parameter_value == "G" %}
+          ${total_goals}
+         {% elsif pie_chart_parameter._parameter_value == "A" %}
+          ${total_assists}
+         {% else %}
+          NULL
          {% endif %};;
   }
 
