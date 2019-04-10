@@ -10,6 +10,30 @@ view: game_skater_stats {
     allowed_value: { label: "None" value: "None"}
   }
 
+  measure: sum_of_goals_liquid {
+    type: sum
+    sql:
+    {% if pie_chart_parameter._parameter_value == 'G' %}
+    ${goals}
+    {% else %}
+    null
+    {% endif %};;
+  }
+
+  measure: sum_of_goals_filtered_liquid {
+    type: sum
+    sql:
+    {% if pie_chart_parameter._parameter_value == 'G' %}
+    ${goals}
+    {% else %}
+    0
+    {% endif %};;
+    filters: {
+      field: player_id
+      value: "> 8473466"
+    }
+  }
+
   parameter: pie_chart_parameter2 {
     type: unquoted
     description: "To be used with the Pie Chart Value field"
@@ -31,6 +55,7 @@ view: game_skater_stats {
 
   measure: pie_chart_value {
     type: number
+    label_from_parameter: pie_chart_parameter
     description: "To be used with the Pie Chart Parameter field"
     sql: {% if pie_chart_parameter._parameter_value == "FP" %}
           ${total_fantasy_points}
@@ -41,6 +66,7 @@ view: game_skater_stats {
          {% else %}
           NULL
          {% endif %};;
+    drill_fields: [player_info.full_name, pie_chart_value]
   }
 
   measure: pie_chart_value2 {
@@ -64,7 +90,7 @@ view: game_skater_stats {
           ${total_fantasy_points}
          {% elsif pie_chart_parameter3._parameter_value == "G" %}
           ${total_goals}
-         {% elsif pie_chart_parameter._parameter_value == "A" %}
+         {% elsif pie_chart_parameter3._parameter_value == "A" %}
           ${total_assists}
          {% else %}
           NULL
@@ -199,6 +225,7 @@ view: game_skater_stats {
   measure: total_goals {
     type: sum
     sql: ${goals} ;;
+    #value_format_name: "decimal_0"
   }
 
   measure: total_assists {

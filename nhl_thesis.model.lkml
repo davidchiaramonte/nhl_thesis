@@ -10,6 +10,14 @@ datagroup: nhl_thesis_default_datagroup {
   max_cache_age: "1 hour"
 }
 
+datagroup: scheduler_test {
+  sql_trigger: SELECT count(*) FROM game ;;
+  max_cache_age: "6 hours"
+}
+
+#Adding a Model Label can group explores into one, single list
+#label: "Test 1"
+
 persist_with: nhl_thesis_default_datagroup
 
 explore: game {}

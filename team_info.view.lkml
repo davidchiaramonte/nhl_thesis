@@ -21,6 +21,16 @@ view: team_info {
     sql: ${TABLE}.link ;;
   }
 
+  dimension: link_to_comparison {
+    type: string
+    sql: CONCAT("How do the ", ${full_team_name}, " compare to other teams?") ;;
+    link: {
+      label: "Team Comparison"
+      url: "/dashboards/5?Team+1={{ team_info.full_team_name._value | url_encode }}"
+      icon_url: "https://www.looker.com/favicon.ico"
+    }
+  }
+
   dimension: short_name {
     type: string
     sql: ${TABLE}.shortName ;;

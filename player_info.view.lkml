@@ -26,6 +26,16 @@ view: player_info {
     sql: ${TABLE}.firstName ;;
   }
 
+  dimension: link_to_comparison {
+    type: string
+    sql: CONCAT("How does ", ${full_name}, " compare to other players?") ;;
+    link: {
+      label: "Team Comparison"
+      url: "/dashboards/3?Player+1={{ player_info.full_name._value | url_encode }}"
+      icon_url: "https://www.looker.com/favicon.ico"
+    }
+  }
+
   dimension: full_name {
     type: string
     sql: concat(${first_name}," ",${last_name}) ;;
@@ -76,6 +86,17 @@ view: player_info {
   dimension: primary_position {
     type: string
     sql: ${TABLE}.primaryPosition ;;
+  }
+
+  dimension: primary_position_formatted {
+    type: string
+    sql: CASE WHEN ${TABLE}.primaryPosition = 'C' THEN 'Center'
+          WHEN ${TABLE}.primaryPosition = 'D' THEN 'Defenseman'
+          WHEN ${TABLE}.primaryPosition = 'LW' THEN 'Left Wing'
+          WHEN ${TABLE}.primaryPosition = 'RW' THEN 'Right Wing'
+          WHEN ${TABLE}.primaryPosition = 'G' THEN 'Goalie'
+          ELSE 'Other'
+          END;;
   }
 
   measure: count {

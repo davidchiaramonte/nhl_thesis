@@ -528,6 +528,16 @@
     width: 12
     height: 9
   filters:
+  # We can have suggestions via field_filter while still having a default value
+  # - name: Player Name
+  #   title: Player Name
+  #   type: field_filter
+  #   model: nhl_thesis
+  #   explore: player_info
+  #   field: player_info.full_name
+  #   default_value: Brent Burns
+  #   allow_multiple_values: true
+  #   required: false
   - name: Historical Data
     title: Historical Data
     type: date_filter
