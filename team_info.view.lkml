@@ -96,6 +96,12 @@ view: team_info {
     }
   }
 
+  dimension: team_name_html {
+    type: string
+    sql: ${TABLE}.teamName ;;
+    html: <a href="https://www.nhl.com/{{ value | downcase | remove: ' ' }}/roster/">{{value}}</a> ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [team_name, short_name]
