@@ -36,6 +36,21 @@ view: player_info {
     }
   }
 
+#   dimension: link_to_comparison_with_filter {
+#     type: string
+#     sql: CONCAT("How does ", ${full_name}, " compare to other players?") ;;
+#     link: {
+#       label: "Team Comparison"
+#       url: "/dashboards/3?Player+1={{ full_name_filter._parameter_value | url_encode }}"
+#       icon_url: "https://www.looker.com/favicon.ico"
+#     }
+#   }
+#
+#   parameter: full_name_filter {
+#     type: string
+#     suggest_dimension: full_name
+#   }
+
   dimension: full_name {
     type: string
     sql: concat(${first_name}," ",${last_name}) ;;
